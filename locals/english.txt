@@ -1,0 +1,12 @@
+{
+
+	"menu_l_global_value_mustang" : "This is a Custom Weapon!",
+	"menu_l_global_value_sally"   : "This is a Custom Weapon!",
+	
+	"bm_w_mustang" : "Mustang",
+	"bm_w_sally"   : "Sally",
+
+	"bm_menu_iron_rear"  : "Rear Iron Sight",
+	"bm_menu_iron_front" : "Front Iron Sight"
+	
+}

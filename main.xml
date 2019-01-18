@@ -1,0 +1,363 @@
+<table name="Mustang and Sally" image="guis/mustangsally" color="Color(0.8, 0.2, 0.8)">
+
+	<Localization directory="locals" default="english.txt"/>
+	
+<!--<AssetUpdates id="23959" name="asset_updates" folder_name="M45A1 CQBP" version="1.02" provider="modworkshop"/>-->
+	
+	<GlobalValue id="mustangsally" color="Color(0.8, 0.2, 0.8)"/>
+
+	<!-- MUSTANG -->
+	
+	<WeaponMod id="wpn_fps_pis_mustang_fr_std"  based_on="wpn_fps_pis_p226_body_standard"    type="lower_reciever"  unit="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fr_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false"/>
+	
+	<WeaponMod id="wpn_fps_pis_mustang_gr_std"  based_on="wpn_fps_pis_p226_body_standard"    type="grip"            unit="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_gr_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false"/>
+	
+	<WeaponMod id="wpn_fps_pis_mustang_ba_std" based_on="wpn_fps_pis_p226_b_barrel_standard" type="barrel"          unit="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ba_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false">
+		<forbids>
+			<value_node value="wpn_fps_pis_p226_b_barrel_standard"/>
+		</forbids>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_fps_pis_mustang_sl_std" based_on="wpn_fps_pis_p226_b_standard"        type="slide"           unit="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_sl_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false"/>
+	
+	<WeaponMod id="wpn_fps_pis_mustang_fo_std" based_on="wpn_fps_pis_p226_b_standard"        type="iron_front"      unit="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fo_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false">
+		<forbids>
+			<value_node value="wpn_fps_pis_p226_o_standard"/>
+		</forbids>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_fps_pis_mustang_ro_std" based_on="wpn_fps_pis_p226_b_standard"        type="iron_rear"       unit="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ro_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false">
+		<forbids>
+			<value_node value="wpn_fps_pis_p226_o_standard"/>
+		</forbids>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_fps_pis_mustang_m_7"  based_on="wpn_fps_pis_p226_m_standard"          type="magazine"        unit="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_m_7"    texture_bundle_folder="mods" drop="false" is_a_unlockable="false"/>
+	
+	<Weapon unlock_level="16">
+		<weapon id="mustang" based_on="p226" CLIP_AMMO_MAX="7" NR_CLIPS_MAX="8" tactical_reload="1" texture_bundle_folder="mods" global_value="mustangsally">
+			<stats damage="100" spread="20" spread_moving="22" recoil="17" concealment="24"/>
+			<timers reload_not_empty="1.5" reload_empty="2.2"/>
+			<fire_mode_data fire_rate="0.15"/>
+			<AMMO_PICKUP>
+				<value_node value="1.6"/>
+				<value_node value="2.8"/>
+			</AMMO_PICKUP>
+			<sounds fire="mustang_fire"/>
+			<animations reload_name_id="p226"/>
+		</weapon>
+
+		<factory id="wpn_fps_pis_mustang" unit="units/mods/weapons/wpn_fps_pis_mustang/wpn_fps_pis_mustang">
+			
+			<animations reload="reload" reload_not_empty="reload_not_empty" fire="recoil" fire_steelsight="recoil" magazine_empty="last_recoil"/>
+			
+			<optional_types>
+				<value_node value="barrel"/>
+				<value_node value="barrel_ext"/>
+				<value_node value="slide"/>
+			</optional_types>
+			<override>
+				<wpn_fps_upg_o_rmr parent="slide">
+					<override>
+					<!--<wpn_fps_pis_mustang_ro_std unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"/>-->
+					</override>
+				</wpn_fps_upg_o_rmr>
+			</override>
+			<default_blueprint>
+			
+				<value_node value="wpn_fps_pis_mustang_fr_std"/>
+				<value_node value="wpn_fps_pis_mustang_gr_std"/>
+				<value_node value="wpn_fps_pis_mustang_ba_std"/>
+				<value_node value="wpn_fps_pis_mustang_sl_std"/>
+				<value_node value="wpn_fps_pis_mustang_ro_std"/>
+				<value_node value="wpn_fps_pis_mustang_fo_std"/>
+				<value_node value="wpn_fps_pis_mustang_m_7"/>
+				
+			</default_blueprint>
+			
+			<uses_parts>
+			
+				<value_node value="wpn_fps_pis_mustang_fr_std"/>
+				<value_node value="wpn_fps_pis_mustang_gr_std"/>
+				<value_node value="wpn_fps_pis_mustang_ba_std"/>
+				<value_node value="wpn_fps_pis_mustang_sl_std"/>
+				<value_node value="wpn_fps_pis_mustang_ro_std"/>
+				<value_node value="wpn_fps_pis_mustang_fo_std"/>
+				<value_node value="wpn_fps_pis_mustang_m_7"/>
+				
+				<value_node value="wpn_fps_upg_ns_pis_large"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium"/>
+				<value_node value="wpn_fps_upg_ns_pis_small"/>
+				<value_node value="wpn_fps_upg_ns_pis_large_kac"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium_gem"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium_slim"/>
+				<value_node value="wpn_fps_upg_ns_pis_jungle"/>
+				<value_node value="wpn_fps_upg_ns_pis_meatgrinder"/>
+				<value_node value="wpn_fps_upg_ns_pis_ipsccomp"/>
+				<value_node value="wpn_fps_upg_pis_ns_flash"/>
+				
+				<value_node value="wpn_fps_upg_fl_pis_laser"/>
+				<value_node value="wpn_fps_upg_fl_pis_tlr1"/>
+				<value_node value="wpn_fps_upg_fl_pis_crimson"/>
+				<value_node value="wpn_fps_upg_fl_pis_x400v"/>
+				<value_node value="wpn_fps_upg_fl_pis_m3x"/>
+				
+				<value_node value="wpn_fps_upg_o_rmr"/>
+
+			</uses_parts>
+			
+		</factory>
+		<stance/>
+	</Weapon>
+	
+	<!-- SALLY -->
+	
+	<WeaponMod id="wpn_fps_pis_sally_fr_std"  based_on="wpn_fps_pis_p226_body_standard"    type="lower_reciever"  unit="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fr_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false"/>
+	
+	<WeaponMod id="wpn_fps_pis_sally_gr_std"  based_on="wpn_fps_pis_p226_body_standard"    type="grip"            unit="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_gr_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false"/>
+	
+	<WeaponMod id="wpn_fps_pis_sally_ba_std" based_on="wpn_fps_pis_p226_b_barrel_standard" type="barrel"          unit="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ba_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false">
+		<forbids>
+			<value_node value="wpn_fps_pis_p226_b_barrel_standard"/>
+		</forbids>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_fps_pis_sally_sl_std" based_on="wpn_fps_pis_p226_b_standard"        type="slide"           unit="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_sl_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false"/>
+	
+	<WeaponMod id="wpn_fps_pis_sally_fo_std" based_on="wpn_fps_pis_p226_b_standard"        type="iron_front"      unit="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fo_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false">
+		<forbids>
+			<value_node value="wpn_fps_pis_p226_o_standard"/>
+		</forbids>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_fps_pis_sally_ro_std" based_on="wpn_fps_pis_p226_b_standard"        type="iron_rear"       unit="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ro_std" texture_bundle_folder="mods" drop="false" is_a_unlockable="false">
+		<forbids>
+			<value_node value="wpn_fps_pis_p226_o_standard"/>
+		</forbids>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_fps_pis_sally_m_7"  based_on="wpn_fps_pis_p226_m_standard"          type="magazine"        unit="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_m_7"    texture_bundle_folder="mods" drop="false" is_a_unlockable="false"/>
+	
+	<Weapon unlock_level="16">
+		<weapon id="sally" based_on="p226" CLIP_AMMO_MAX="7" NR_CLIPS_MAX="11" tactical_reload="1" texture_bundle_folder="mods" global_value="mustangsally">
+			<stats damage="75" spread="16" spread_moving="16" recoil="10" concealment="24"/>
+			<timers reload_not_empty="1.5" reload_empty="2.2"/>
+			<fire_mode_data fire_rate="0.1"/>
+			<AMMO_PICKUP>
+				<value_node value="2.4"/>
+				<value_node value="4"/>
+			</AMMO_PICKUP>
+			<sounds fire="sally_fire"/>
+			<animations reload_name_id="p226"/>
+		</weapon>
+
+		<factory id="wpn_fps_pis_sally" unit="units/mods/weapons/wpn_fps_pis_sally/wpn_fps_pis_sally">
+			
+			<animations reload="reload" reload_not_empty="reload_not_empty" fire="recoil" fire_steelsight="recoil" magazine_empty="last_recoil"/>
+			
+			<optional_types>
+				<value_node value="barrel"/>
+				<value_node value="barrel_ext"/>
+				<value_node value="slide"/>
+			</optional_types>
+			<override>
+				<wpn_fps_upg_o_rmr parent="slide">
+					<override>
+					<!--<wpn_fps_pis_sally_ro_std unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"/>-->
+					</override>
+				</wpn_fps_upg_o_rmr>
+			</override>
+			<default_blueprint>
+			
+				<value_node value="wpn_fps_pis_sally_fr_std"/>
+				<value_node value="wpn_fps_pis_sally_gr_std"/>
+				<value_node value="wpn_fps_pis_sally_ba_std"/>
+				<value_node value="wpn_fps_pis_sally_sl_std"/>
+				<value_node value="wpn_fps_pis_sally_ro_std"/>
+				<value_node value="wpn_fps_pis_sally_fo_std"/>
+				<value_node value="wpn_fps_pis_sally_m_7"/>
+				
+			</default_blueprint>
+			
+			<uses_parts>
+			
+				<value_node value="wpn_fps_pis_sally_fr_std"/>
+				<value_node value="wpn_fps_pis_sally_gr_std"/>
+				<value_node value="wpn_fps_pis_sally_ha_std"/>
+				<value_node value="wpn_fps_pis_sally_ba_std"/>
+				<value_node value="wpn_fps_pis_sally_sl_std"/>
+				<value_node value="wpn_fps_pis_sally_ro_std"/>
+				<value_node value="wpn_fps_pis_sally_fo_std"/>
+				<value_node value="wpn_fps_pis_sally_m_7"/>
+				
+				<value_node value="wpn_fps_upg_ns_pis_large"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium"/>
+				<value_node value="wpn_fps_upg_ns_pis_small"/>
+				<value_node value="wpn_fps_upg_ns_pis_large_kac"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium_gem"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium_slim"/>
+				<value_node value="wpn_fps_upg_ns_pis_jungle"/>
+				<value_node value="wpn_fps_upg_ns_pis_meatgrinder"/>
+				<value_node value="wpn_fps_upg_ns_pis_ipsccomp"/>
+				<value_node value="wpn_fps_upg_pis_ns_flash"/>
+				
+				<value_node value="wpn_fps_upg_fl_pis_laser"/>
+				<value_node value="wpn_fps_upg_fl_pis_tlr1"/>
+				<value_node value="wpn_fps_upg_fl_pis_crimson"/>
+				<value_node value="wpn_fps_upg_fl_pis_x400v"/>
+				<value_node value="wpn_fps_upg_fl_pis_m3x"/>
+				
+				<value_node value="wpn_fps_upg_o_rmr"/>
+
+			</uses_parts>
+			
+		</factory>
+		<stance/>
+	</Weapon>
+	
+	<Sounds directory="assets">
+		<sound id="sally_fire" path="sounds/sally_fire.ogg" prefix="regular"/>
+		<sound id="sally_fire" path="sounds/sally_supp.ogg" prefix="suppressed_a"/>
+		<sound id="sally_fire" path="sounds/sally_supp.ogg" prefix="suppressed_b"/>
+		<sound id="sally_fire" path="sounds/sally_supp.ogg" prefix="suppressed_c"/>
+		<sound id="mustang_fire" path="sounds/mustang_fire.ogg" prefix="regular"/>
+		<sound id="mustang_fire" path="sounds/mustang_supp.ogg" prefix="suppressed_a"/>
+		<sound id="mustang_fire" path="sounds/mustang_supp.ogg" prefix="suppressed_b"/>
+		<sound id="mustang_fire" path="sounds/mustang_supp.ogg" prefix="suppressed_c"/>
+	</Sounds>
+	
+	<AddFiles directory="assets">
+	
+		<!-- MUSTANG PTS -->
+		
+		<texture         path="units/mods/weapons/wpn_fps_pis_mustang_pts/mustang_std_df"/>
+		<texture         path="units/mods/weapons/wpn_fps_pis_mustang_pts/mustang_std_nm"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fr_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fr_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fr_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fr_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fr_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fr_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_sl_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_sl_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_sl_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_sl_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_sl_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_sl_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ba_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ba_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ba_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ba_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ba_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ba_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ro_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ro_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ro_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ro_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ro_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_ro_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fo_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fo_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fo_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fo_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fo_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_fo_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_gr_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_gr_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_gr_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_gr_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_gr_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_gr_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_m_7"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_m_7"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_m_7"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_m_7"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_m_7"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_mustang_pts/wpn_fps_pis_mustang_m_7_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_mustang/wpn_fps_pis_mustang"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_mustang/wpn_fps_pis_mustang"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_mustang/wpn_fps_pis_mustang"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang/wpn_fps_pis_mustang"/>
+		
+		<unit            path="units/mods/weapons/wpn_fps_pis_mustang/wpn_fps_pis_mustang_npc"/>
+		
+		<!-- SALLY PTS -->
+	
+		<texture         path="units/mods/weapons/wpn_fps_pis_sally_pts/sally_std_df"/>
+		<texture         path="units/mods/weapons/wpn_fps_pis_sally_pts/sally_std_nm"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fr_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fr_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fr_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fr_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fr_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fr_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_sl_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_sl_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_sl_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_sl_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_sl_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_sl_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ba_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ba_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ba_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ba_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ba_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ba_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ro_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ro_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ro_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ro_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ro_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_ro_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fo_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fo_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fo_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fo_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fo_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_fo_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_gr_std"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_gr_std"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_gr_std"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_gr_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_gr_std"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_gr_std_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_m_7"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_m_7"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_m_7"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_m_7"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_m_7"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_sally_pts/wpn_fps_pis_sally_m_7_thq"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_sally/wpn_fps_pis_sally"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_sally/wpn_fps_pis_sally"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_sally/wpn_fps_pis_sally"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally/wpn_fps_pis_sally"/>
+		
+		<unit            path="units/mods/weapons/wpn_fps_pis_sally/wpn_fps_pis_sally_npc"/>
+		
+		<texture         path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/sally"/>
+		
+	</AddFiles>
+	
+	<Hooks directory="hooks">
+	<!--<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+		<hook file="weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
+		<hook file="playertweakdata.lua" source_file="lib/tweak_data/playertweakdata"/>-->
+	</Hooks>
+	
+</table>
