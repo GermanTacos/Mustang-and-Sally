@@ -215,6 +215,55 @@
 		<stance/>
 	</Weapon>
 	
+	<Weapon unlock_level="66">
+		<weapon id="him" based_on="x_p226" weapon_hold="jowi_pistol" CLIP_AMMO_MAX="14" NR_CLIPS_MAX="8" can_shoot_through_shield="false" can_shoot_through_enemy="false" can_shoot_through_wall="false" lock_slide="true" tactical_reload="2" texture_bundle_folder="mods" global_value="mustangsally">
+			<stats damage="90" spread="17" spread_moving="17" recoil="6" concealment="22"/>
+			<timers reload_not_empty="1.5" reload_empty="2.2"/>
+			<fire_mode_data fire_rate="0.1"/>
+			<AMMO_PICKUP>
+				<value_node value="2"/>
+				<value_node value="3"/>
+			</AMMO_PICKUP>
+			<sounds fire="mustang_fire" use_fix="true"/>
+			<animations reload_name_id="x_p226" recoil_steelsight="true" magazine_empty="last_recoil" lock_slide="true" />
+		</weapon>
+		<factory id="wpn_fps_pis_him" unit="units/mods/weapons/wpn_fps_pis_him/wpn_fps_pis_him">
+			
+			<optional_types>
+				<value_node value="barrel"/>
+				<value_node value="barrel_ext"/>
+				<value_node value="slide"/>
+			</optional_types>
+
+			<default_blueprint>
+			
+				<value_node value="wpn_fps_pis_mustang_fr_std"/>
+				<value_node value="wpn_fps_pis_mustang_gr_std"/>
+				<value_node value="wpn_fps_pis_mustang_ba_std"/>
+				<value_node value="wpn_fps_pis_mustang_sl_std"/>
+				<value_node value="wpn_fps_pis_mustang_ro_std"/>
+				<value_node value="wpn_fps_pis_mustang_fo_std"/>
+				<value_node value="wpn_fps_pis_mustang_m_7"/>
+				
+			</default_blueprint>
+			
+			<uses_parts>
+			
+				<value_node value="wpn_fps_pis_mustang_fr_std"/>
+				<value_node value="wpn_fps_pis_mustang_gr_std"/>
+				<value_node value="wpn_fps_pis_mustang_ba_std"/>
+				<value_node value="wpn_fps_pis_mustang_sl_std"/>
+				<value_node value="wpn_fps_pis_mustang_ro_std"/>
+				<value_node value="wpn_fps_pis_mustang_fo_std"/>
+				<value_node value="wpn_fps_pis_mustang_m_7"/>
+
+			</uses_parts>
+			
+		</factory>
+		<stance/>
+		
+	</Weapon>
+	
 	<Sounds directory="assets">
 		<sound id="sally_fire" path="sounds/sally_fire.ogg" prefix="regular"/>
 		<sound id="sally_fire" path="sounds/sally_supp.ogg" prefix="suppressed_a"/>
@@ -350,13 +399,29 @@
 		
 		<unit            path="units/mods/weapons/wpn_fps_pis_sally/wpn_fps_pis_sally_npc"/>
 		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_him/wpn_fps_pis_him"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_him/wpn_fps_pis_him"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_him/wpn_fps_pis_him"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_him/wpn_fps_pis_him"/>
+		
+		<unit            path="units/mods/weapons/wpn_fps_pis_him/wpn_fps_pis_him_npc"/>
+		
+		<cooked_physics  path="units/mods/weapons/wpn_fps_pis_her/wpn_fps_pis_her"/>
+		<model           path="units/mods/weapons/wpn_fps_pis_her/wpn_fps_pis_her"/>
+		<object          path="units/mods/weapons/wpn_fps_pis_her/wpn_fps_pis_her"/>
+		<unit            path="units/mods/weapons/wpn_fps_pis_her/wpn_fps_pis_her"/>
+		
+		<unit            path="units/mods/weapons/wpn_fps_pis_her/wpn_fps_pis_her_npc"/>
+		
+		<texture         path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/mustang"/>
 		<texture         path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/sally"/>
+		<texture         path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/them"/>
 		
 	</AddFiles>
 	
 	<Hooks directory="hooks">
-	<!--<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
-		<hook file="weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
+		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+	<!--<hook file="weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="playertweakdata.lua" source_file="lib/tweak_data/playertweakdata"/>-->
 	</Hooks>
 	
