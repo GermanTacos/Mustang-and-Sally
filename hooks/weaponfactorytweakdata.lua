@@ -1,6 +1,6 @@
 Hooks:PostHook( WeaponFactoryTweakData, "init", "MustangSallyInit", function(self)
 
-	--self.wpn_fps_pis_them.second_unit = "units/mods/weapons/wpn_fps_pis_her/wpn_fps_pis_her"
+	self.wpn_fps_pis_them.second_unit = "units/mods/weapons/wpn_fps_pis_her/wpn_fps_pis_her"
 	
 	self.parts.wpn_fps_pis_mustang_fr_std.right_only = true
 	self.parts.wpn_fps_pis_mustang_gr_std.right_only = true
