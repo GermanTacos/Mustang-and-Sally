@@ -319,14 +319,14 @@
 	</Weapon>
 	
 	<Sounds directory="assets\sounds">
-		<sound id="sally_fire" path="sounds/sally_fire.ogg" prefix="regular"/>
-		<sound id="sally_fire" path="sounds/sally_supp.ogg" prefix="suppressed_a"/>
-		<sound id="sally_fire" path="sounds/sally_supp.ogg" prefix="suppressed_b"/>
-		<sound id="sally_fire" path="sounds/sally_supp.ogg" prefix="suppressed_c"/>
-		<sound id="mustang_fire" path="sounds/mustang_fire.ogg" prefix="regular"/>
-		<sound id="mustang_fire" path="sounds/mustang_supp.ogg" prefix="suppressed_a"/>
-		<sound id="mustang_fire" path="sounds/mustang_supp.ogg" prefix="suppressed_b"/>
-		<sound id="mustang_fire" path="sounds/mustang_supp.ogg" prefix="suppressed_c"/>
+		<sound id="sally_fire" path="sally_fire.ogg" prefix="regular"/>
+		<sound id="sally_fire" path="sally_supp.ogg" prefix="suppressed_a"/>
+		<sound id="sally_fire" path="sally_supp.ogg" prefix="suppressed_b"/>
+		<sound id="sally_fire" path="sally_supp.ogg" prefix="suppressed_c"/>
+		<sound id="mustang_fire" path="mustang_fire.ogg" prefix="regular"/>
+		<sound id="mustang_fire" path="mustang_supp.ogg" prefix="suppressed_a"/>
+		<sound id="mustang_fire" path="mustang_supp.ogg" prefix="suppressed_b"/>
+		<sound id="mustang_fire" path="mustang_supp.ogg" prefix="suppressed_c"/>
 		<sound id="wp_them_mag_slide_out" path="wp_them_mag_slide_out.ogg" prefix="first"/>
 		<sound id="wp_them_mag_slide_out" path="wp_them_mag_slide_out.ogg" prefix="third"/>
 		<sound id="wp_them_mag_slide_in" path="wp_them_mag_slide_in.ogg" prefix="first"/>
